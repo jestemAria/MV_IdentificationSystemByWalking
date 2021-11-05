@@ -1,4 +1,4 @@
-import cv2 as cv
+from cv2 import cv2 as cv
 
 cap = cv.VideoCapture(0)
 fgbg = cv.bgsegm.createBackgroundSubtractorMOG()
