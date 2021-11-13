@@ -13,9 +13,10 @@ while True:
         break
 
     fore_ground_maks = fore_ground_back_ground.apply(frame)
+    median = cv.medianBlur(fore_ground_maks, 5)
 
     cv.imshow('Frame', frame)
-    cv.imshow('FG Mask Frame', fore_ground_maks)
+    cv.imshow('FG Mask Frame', median)
 
     keyboard = cv.waitKey(30)
     if keyboard == 'q' or keyboard == 27:
