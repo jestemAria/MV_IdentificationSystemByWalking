@@ -14,9 +14,11 @@ while True:
 
     fore_ground_maks = fore_ground_back_ground.apply(frame)
     median = cv.medianBlur(fore_ground_maks, 5)
+    canny = cv.Canny(median, 100, 200)
 
     cv.imshow('Frame', frame)
     cv.imshow('FG Mask Frame', median)
+    cv.imshow('Canny', canny)
 
     keyboard = cv.waitKey(30)
     if keyboard == 'q' or keyboard == 27:
